@@ -1,0 +1,75 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex align-items-center" >
+		<div class="container">
+			<h1>Welcome to Medilab</h1>
+			
+		
+		</div>
+	</section>
+
+	<!-- End Hero -->
+	<main
+		id="main">
+		<!-- ======= Appointment Section ======= -->
+		<section id="appointment" class="appointment section-bg" style="margin-top: 20%;">
+			<div class="container">
+				<div class="section-title">
+					<h2>Make an Appointment</h2>
+					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+				</div>
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success">
+						{{ message }}
+					</div>
+				{% endfor %}
+				{{form(form)}}
+				</div>
+
+			</section>
+
+			<!-- End Appointment Section -->
+
+			<!-- ======= Doctors Section ======= -->
+			<section id="doctors" class="doctors">
+				<div class="container">
+
+					<div class="section-title">
+						<h2>Doctors</h2>
+						<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					</div>
+
+					<div class="row">
+						{% for doctor in doctors %}
+							<div class="col-lg-6 mt-4 mt-lg-0">
+								<div class="member d-flex align-items-start">
+									<div class="pic"><img src={{doctor.image}} class="img-fluid" alt=""></div>
+									<div class="member-info">
+										<h4>{{doctor.fullname}}</h4>
+										<span>{{doctor.categorie}}</span>
+										<p>{{doctor.description}}</p>
+										<div class="social">
+											<a href="">
+												<i class="ri-twitter-fill"></i>
+											</a>
+											<a href="">
+												<i class="ri-facebook-fill"></i>
+											</a>
+											<a href="">
+												<i class="ri-instagram-fill"></i>
+											</a>
+											<a href="">
+												<i class="ri-linkedin-box-fill"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+						
+			</section>
+			<!-- End Doctors Section -->
+		{% endblock %}

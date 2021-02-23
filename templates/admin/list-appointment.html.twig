@@ -1,0 +1,52 @@
+{% extends "admin/header.html.twig" %}
+{% block body %}
+	<div id="layoutSidenav_content">
+		<main>
+			<div class="container-fluid">
+				<h1 class="mt-4">Dashboard</h1>
+				<ol class="breadcrumb mb-4">
+					<li class="breadcrumb-item active">Dashboard</li>
+				</ol>
+				<div class="card mb-4">
+					<div class="card-header">
+						<i class="fas fa-table mr-1"></i>
+						Appointment Liste
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Phone Number</th>
+										<th>date</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Phone Number</th>
+										<th>date</th>
+									</tr>
+								</tfoot>
+								<tbody>
+									{% for appointment in appointments %}
+										<tr>
+											<td>{{appointment.name}}</td>
+											<td>{{appointment.email}}</td>
+											<td>{{appointment.phone}}</td>
+											<td>{{appointment.date|date('d/m/Y')}}</td>
+
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</div></body></html>{% endblock %}
